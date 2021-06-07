@@ -1114,10 +1114,8 @@ def transmission_sample(sample=None, energy=None, absorp_total=None, area=None, 
         energy = float(request.form.get('energy'))
         absorp_total = float(request.form.get('absorp_total'))
         area = float(request.form.get('area'))
-        density = request.form.get('density', '')
-        if not density:
-            density = None
-        else:
+        density = request.form.get('density', None)
+        if density:
             density = float(density)
 
         frac_type = request.form.get('frac_type')
